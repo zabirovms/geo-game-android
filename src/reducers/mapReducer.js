@@ -1,92 +1,59 @@
-import {mapActionToReducer} from './_utils';
-import {Map} from '../actionTypes';
+import {
+  MAP_SET_VIEW,
+  MAP_SET_ZOOM,
+  MAP_SET_CENTER,
+  MAP_SET_MARKER,
+  MAP_REMOVE_MARKER,
+} from '../actionTypes';
 
-const defaultGameState = {
-    locale: undefined,
-    areaId: undefined,
-    countriesData: undefined,
-    displayedData: undefined,
-    markers: undefined,
-    loading: false,
-    error: undefined
+const initialState = {
+  center: {
+    latitude: 20,
+    longitude: 0,
   },
+  zoom: 2,
+  markers: [],
+  selectedMarker: null,
+};
 
-  //<editor-fold desc="Fetch">
-  fetch = (state, action) => ({
-    ...state,
-    ...defaultGameState,
-    areaId: action.payload.id,
-    loading: true
-  }),
-  fetchFulfilled = (state, action) => ({
-    ...state,
-    loading: false,
-    countriesData: action.payload,
-    displayedData: action.payload,
-    dataById: action.payload.features.reduce((res, d) => {
-      res[d.properties.id] = d;
-      return res;
-    }, {})
-  }),
-  fetchRejected = (state, action) => ({
-    ...state,
-    loading: false,
-    error: action.payload
-  }),
-  //</editor-fold>
+const mapReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case MAP_SET_VIEW:
+      return {
+        ...state,
+        center: action.payload.center,
+        zoom: action.payload.zoom,
+      };
 
-  showMarkers = (state, action) => ({
-    ...state,
-    markers: action.payload
-  }),
-  showMarkersAllCountries = (state) => ({
-    ...state,
-    markers: Object.entries(state.dataById)
-      .map(([id, data]) => ({
-        id,
-        type: 'country-location',
-        properties: data.properties
-      }))
-  }),
-  reset = state => ({
-    ...state,
-    markers: undefined,
-    displayedData: state.countriesData,
-    popup: undefined
-  }),
-  clearData = () => defaultGameState,
-  showPopup = (state, action) => ({
-    ...state,
-    popup: state.dataById[action.payload]
-  }),
-  hidePopup = state => ({
-    ...state,
-    popup: undefined
-  }),
-  highlightFeatures = (state, action) => ({
-    ...state,
-    displayedData: {
-      ...state.countriesData,
-      features: state.countriesData.features.map(f => ({
-        ...f,
-        properties: {
-          ...f.properties,
-          fillColor: action.payload[f.properties.id]
-        }
-      }))
-    }
-  })
-;
+    case MAP_SET_ZOOM:
+      return {
+        ...state,
+        zoom: action.payload,
+      };
 
-export default mapActionToReducer({
-  [Map.FETCH_DATA]: fetch,
-  [Map.FETCH_DATA_FULFILLED]: fetchFulfilled,
-  [Map.FETCH_DATA_REJECTED]: fetchRejected,
-  [Map.SHOW_MARKERS]: showMarkers,
-  [Map.SHOW_MARKERS_ALL_COUNTRIES]: showMarkersAllCountries,
-  [Map.SHOW_POPUP]: showPopup,
-  [Map.HIDE_POPUP]: hidePopup,
-  [Map.HIGHLIGHT_FEATURES]: highlightFeatures,
-  [Map.RESET]: reset,
-  [Map.CLEAR_DATA]: clearData
-}, defaultGameState);
+    case MAP_SET_CENTER:
+      return {
+        ...state,
+        center: action.payload,
+      };
+
+    case MAP_SET_MARKER:
+      return {
+        ...state,
+        markers: [...state.markers, action.payload],
+        selectedMarker: action.payload,
+      };
+
+    case MAP_REMOVE_MARKER:
+      return {
+        ...state,
+        markers: state.markers.filter(marker => marker.id !== action.payload),
+        selectedMarker: state.selectedMarker?.id === action.payload ? null : state.selectedMarker,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default mapReducer;

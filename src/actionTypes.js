@@ -1,41 +1,31 @@
-export const Game = {
-  START: 'game:start',
-  SET: 'game:set',
-  STOP: 'game:stop',
-  RESTART: 'game:restart',
+// Game Actions
+export const GAME_START = 'GAME_START';
+export const GAME_END = 'GAME_END';
+export const GAME_PAUSE = 'GAME_PAUSE';
+export const GAME_RESUME = 'GAME_RESUME';
+export const GAME_RESTART = 'GAME_RESTART';
+export const GAME_SET_MODE = 'GAME_SET_MODE';
+export const GAME_SET_AREA = 'GAME_SET_AREA';
+export const GAME_ANSWER_CORRECT = 'GAME_ANSWER_CORRECT';
+export const GAME_ANSWER_WRONG = 'GAME_ANSWER_WRONG';
+export const GAME_NEXT_QUESTION = 'GAME_NEXT_QUESTION';
 
-  ANSWER_CURRENT_QUESTION: 'game:answer-current-question',
-  RESULTS: 'game:results'
-};
+// Map Actions
+export const MAP_SET_VIEW = 'MAP_SET_VIEW';
+export const MAP_SET_ZOOM = 'MAP_SET_ZOOM';
+export const MAP_SET_CENTER = 'MAP_SET_CENTER';
+export const MAP_SET_MARKER = 'MAP_SET_MARKER';
+export const MAP_REMOVE_MARKER = 'MAP_REMOVE_MARKER';
 
-export const Profile = {
-  FETCH_DATA: 'profile:fetch-data',
-  FETCH_DATA_FULFILLED: 'profile:fetch-data_fulfilled',
-  FETCH_DATA_REJECTED: 'profile:fetch-data_rejected',
-  SAVE_DATA: 'profile:save-data',
-  SAVE_DATA_FULFILLED: 'profile:save-data_fulfilled',
-  SAVE_DATA_REJECTED: 'profile:save-data_rejected',
-  SHOW_HELP: 'profile:help_show',
-  HIDE_HELP: 'profile:help_hide'
-};
+// Profile Actions
+export const PROFILE_LOAD = 'PROFILE_LOAD';
+export const PROFILE_SAVE = 'PROFILE_SAVE';
+export const PROFILE_UPDATE = 'PROFILE_UPDATE';
 
-export const Timer = {
-  START: 'timer:start',
-  STOP: 'timer:stop',
-  RESET: 'timer:reset',
-  DECREMENT: 'timer:decrement',
-  TIMEOUT: 'timer:timeout'
-};
-
-export const Map = {
-  FETCH_DATA: 'map:fetch-data',
-  FETCH_DATA_FULFILLED: 'map:fetch-data_fulfilled',
-  FETCH_DATA_REJECTED: 'map:fetch-data_rejected',
-  RESET: 'map:reset',
-  CLEAR_DATA: 'map:clear-data',
-  HIGHLIGHT_FEATURES: 'map:highlightFeatures',
-  SHOW_MARKERS: 'map:show-markers',
-  SHOW_MARKERS_ALL_COUNTRIES: 'map:show-markers-all-countries',
-  SHOW_POPUP: 'map:show-popup',
-  HIDE_POPUP: 'map:hide-popup'
-};
+// Timer Actions
+export const TIMER_START = 'TIMER_START';
+export const TIMER_STOP = 'TIMER_STOP';
+export const TIMER_PAUSE = 'TIMER_PAUSE';
+export const TIMER_RESUME = 'TIMER_RESUME';
+export const TIMER_TICK = 'TIMER_TICK';
+export const TIMER_SET_DURATION = 'TIMER_SET_DURATION';

@@ -1,0 +1,53 @@
+{
+  "header": {
+    "title": "World Geography Game",
+    "subTitle": "Learn about or rediscover over 200 countries all over the globe!",
+    "description": "Find countries from their name, capital city or flag. Learn or review your geography in a simple way."
+  },
+  "modes": {
+    "countryName": "Country Name",
+    "capital": "Capital",
+    "flag": "Flag"
+  },
+  "continents": {
+    "africa": "Africa",
+    "asia": "Asia",
+    "europe": "Europe",
+    "northAmerica": "North America",
+    "southAmerica": "South America",
+    "oceania": "Oceania"
+  },
+  "footer": {
+    "credits": "Credits",
+    "about": "About",
+    "issue": "Report an issue"
+  },
+  "actions": {
+    "play": "Play",
+    "restart": "Restart",
+    "close": "Close",
+    "next": "Next",
+    "finish": "Finish"
+  },
+  "gettingStarted": {
+    "title": "Getting Started",
+    "intro": "Find the country by the name, capital city or flag given on the top of the page.",
+    "info": "During the game, you can find the following information on the top of the page:",
+    "doNotShowAgain": "Don't show again"
+  },
+  "game": {
+    "score": "Score",
+    "time": "Time",
+    "question": "Question",
+    "correct": "Correct!",
+    "wrong": "Wrong!",
+    "timeUp": "Time's up!",
+    "gameOver": "Game Over",
+    "finalScore": "Final Score"
+  },
+  "languages": {
+    "en": "English",
+    "ru": "русский",
+    "tg": "тоҷикӣ"
+  }
+}

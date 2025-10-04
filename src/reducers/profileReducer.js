@@ -1,81 +1,54 @@
-import {mapActionToReducer} from './_utils';
-import {Profile} from '../actionTypes';
+import {
+  PROFILE_LOAD,
+  PROFILE_SAVE,
+  PROFILE_UPDATE,
+} from '../actionTypes';
 
-const defaultProfileState = {
-    persisted: undefined,
-    showHelp: true,
-    loading: false,
-    saving: false,
-    error: undefined
+const initialState = {
+  id: null,
+  name: '',
+  language: 'tg',
+  bestScores: {
+    africa: 0,
+    asia: 0,
+    europe: 0,
+    northAmerica: 0,
+    southAmerica: 0,
+    oceania: 0,
   },
-
-  //<editor-fold desc="Fetch">
-  fetch = state => ({
-    ...state,
-    loading: true,
-    error: undefined
-  }),
-  fetchFulfilled = (state, action) => {
-    const persisted = action.payload;
-    return {
-      ...state,
-      showHelp: persisted.config.showHelpOnGameStart,
-      loading: false,
-      persisted: persisted
-    };
+  totalGamesPlayed: 0,
+  totalTimePlayed: 0,
+  achievements: [],
+  settings: {
+    soundEnabled: true,
+    vibrationEnabled: true,
+    showHints: true,
   },
-  fetchRejected = (state, action) => ({
-    ...state,
-    loading: false,
-    persisted: undefined,
-    error: action.payload
-  }),
-  //</editor-fold>
+};
 
-  //<editor-fold desc="Save">
-  save = state => ({
-    ...state,
-    saving: true,
-    error: undefined
-  }),
-  saveFulfilled = state => ({
-    ...state,
-    saving: false
-  }),
-  saveRejected = (state, action) => ({
-    ...state,
-    saving: false,
-    error: action.payload
-  }),
-  //</editor-fold>
+const profileReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case PROFILE_LOAD:
+      return {
+        ...state,
+        ...action.payload,
+      };
 
-  //<editor-fold desc="Help">
-  showHelp = state => ({
-    ...state,
-    showHelp: true
-  }),
-  hideHelp = (state, action) => {
-    const res = {
-      ...state,
-      showHelp: false
-    };
+    case PROFILE_SAVE:
+      return {
+        ...state,
+        ...action.payload,
+      };
 
-    if (action.payload.showHelpOnGameStart === false) {
-      res.persisted.config.showHelpOnGameStart = false;
-    }
+    case PROFILE_UPDATE:
+      return {
+        ...state,
+        ...action.payload,
+      };
 
-    return res;
+    default:
+      return state;
   }
-  //</editor-fold>
-;
+};
 
-export default mapActionToReducer({
-  [Profile.FETCH_DATA]: fetch,
-  [Profile.FETCH_DATA_FULFILLED]: fetchFulfilled,
-  [Profile.FETCH_DATA_REJECTED]: fetchRejected,
-  [Profile.SAVE_DATA]: save,
-  [Profile.SAVE_DATA_FULFILLED]: saveFulfilled,
-  [Profile.SAVE_DATA_REJECTED]: saveRejected,
-  [Profile.SHOW_HELP]: showHelp,
-  [Profile.HIDE_HELP]: hideHelp
-}, defaultProfileState);
+export default profileReducer;

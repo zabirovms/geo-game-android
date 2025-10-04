@@ -1,36 +1,77 @@
-import {mapActionToReducer} from './_utils';
-import {Timer} from '../actionTypes';
+import {
+  TIMER_START,
+  TIMER_STOP,
+  TIMER_PAUSE,
+  TIMER_RESUME,
+  TIMER_TICK,
+  TIMER_SET_DURATION,
+} from '../actionTypes';
 
-const defaultState = {
-    active: false,
-    duration: undefined,
-    timeout: undefined,
-    onTimeout: undefined
-  },
-  start = (state, action) => ({
-    ...state,
-    duration: action.payload.duration || state.duration,
-    onTimeout: action.payload.onTimeout || state.onTimeout,
-    timeout: action.payload.duration || state.duration,
-    active: true
-  }),
-  stop = state => ({
-    ...state,
-    active: false
-  }),
-  reset = state => ({
-    ...state,
-    timeout: state.duration
-  }),
-  decrement = state => ({
-    ...state,
-    timeout: state.timeout - 1
-  })
-;
+const initialState = {
+  isRunning: false,
+  isPaused: false,
+  duration: 30,
+  timeLeft: 30,
+  startTime: null,
+  pauseTime: null,
+  totalPausedTime: 0,
+};
 
-export default mapActionToReducer({
-  [Timer.START]: start,
-  [Timer.STOP]: stop,
-  [Timer.RESET]: reset,
-  [Timer.DECREMENT]: decrement,
-}, defaultState);
+const timerReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case TIMER_START:
+      return {
+        ...state,
+        isRunning: true,
+        isPaused: false,
+        timeLeft: state.duration,
+        startTime: Date.now(),
+        pauseTime: null,
+        totalPausedTime: 0,
+      };
+
+    case TIMER_STOP:
+      return {
+        ...state,
+        isRunning: false,
+        isPaused: false,
+        timeLeft: 0,
+        startTime: null,
+        pauseTime: null,
+        totalPausedTime: 0,
+      };
+
+    case TIMER_PAUSE:
+      return {
+        ...state,
+        isPaused: true,
+        pauseTime: Date.now(),
+      };
+
+    case TIMER_RESUME:
+      return {
+        ...state,
+        isPaused: false,
+        totalPausedTime: state.totalPausedTime + (Date.now() - state.pauseTime),
+        pauseTime: null,
+      };
+
+    case TIMER_TICK:
+      return {
+        ...state,
+        timeLeft: Math.max(0, state.timeLeft - 1),
+      };
+
+    case TIMER_SET_DURATION:
+      return {
+        ...state,
+        duration: action.payload,
+        timeLeft: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default timerReducer;

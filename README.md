@@ -1,7 +1,16 @@
-# World Geography Game
+# World Geography Game - Native Android App
 
-Geography game to discover or refresh your geography in an easy and interactive way. 
+Native Android geography game built with React Native to discover or refresh your geography in an easy and interactive way. 
 Find the countries by name, capital or flag and learn much more about each country.
+
+## Features
+
+- ✅ **Native Android Performance** - Built with React Native
+- ✅ **Complete Tajik Localization** - All UI and country data in Tajik
+- ✅ **Interactive Native Maps** - Google Maps integration
+- ✅ **Multiple Game Modes** - Country Name, Capital, Flag
+- ✅ **All Continents** - Africa, Asia, Europe, North America, South America, Oceania
+- ✅ **Score Tracking** - Timer and scoring system
 
 ## Available languages
 
@@ -11,9 +20,42 @@ The game is currently available in 3 languages:
 - `ru`: Русский
 - `tg`: тоҷикӣ (Tajik - Default)
 
-The capitals names are all translated in English but not in other languages.   
+## Quick Start
 
-**Contributions are welcome to reduce the gap!**
+### Prerequisites
+- Node.js 16+
+- JDK 17
+- Android Studio
+- Google Maps API Key
+
+### Setup
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Configure Google Maps:**
+   - Get API key from [Google Cloud Console](https://console.cloud.google.com/)
+   - Add to `android/app/src/main/AndroidManifest.xml`
+
+3. **Run the app:**
+   ```bash
+   npx react-native run-android
+   ```
+
+For detailed setup instructions, see [REACT_NATIVE_SETUP.md](REACT_NATIVE_SETUP.md)
+
+## Project Structure
+
+```
+src/
+├── screens/          # React Native screens
+├── data/            # Country data with Tajik translations
+├── locales/         # UI translations (Tajik, English, Russian)
+├── services/        # Localization and utility services
+├── reducers/        # Redux reducers
+└── store/          # Redux store configuration
+```
 
 ### Translations
 
