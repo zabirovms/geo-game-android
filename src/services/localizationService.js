@@ -2,25 +2,8 @@ import en from '../locales/ui/en';
 
 export const supportedGameLocales = Object.freeze([
   {code: 'en', name: 'English'},
-  {code: 'fr', name: 'français'},
-  {code: 'pl', name: 'polski'},
-  {code: 'it', name: 'italiano'},
-  {code: 'de', name: 'Deutsch'},
-  {code: 'es', name: 'español'},
-  {code: 'pt', name: 'português'},
-  {code: 'ga', name: 'Gaeilge'},
-  {code: 'bg', name: 'български'},
-  {code: 'ca', name: 'català'},
-  {code: 'cs', name: 'čeština'},
-  {code: 'da', name: 'dansk'},
-  {code: 'fi', name: 'suomi'},
-  {code: 'gl', name: 'galego'},
-  {code: 'hr', name: 'hrvatski'},
-  {code: 'ja', name: '日本語'},
-  {code: 'nl', name: 'Nederlands'},
-  {code: 'nn', name: 'nynorsk'},
   {code: 'ru', name: 'русский'},
-  {code: 'zh', name: '中文'},
+  {code: 'tg', name: 'тоҷикӣ'},
 ]);
 
 export const supportedGameLocalesByCode = Object.freeze(
@@ -37,7 +20,7 @@ export const getTranslation = locale =>
     }));
 
 export const getBestMatchingLocale = () => {
-  const defaultLocale = 'en';
+  const defaultLocale = 'tg';
 
   if (!window.navigator) {
     return defaultLocale;

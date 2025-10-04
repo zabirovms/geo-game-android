@@ -5,28 +5,11 @@ Find the countries by name, capital or flag and learn much more about each count
 
 ## Available languages
 
-The game is currently available in 20 languages: 
+The game is currently available in 3 languages: 
 
-- `bg`: Български
-- `ca`: Català
-- `cs`: Čeština
-- `da`: Dansk
-- `de`: Deutsch
 - `en`: English
-- `es`: Español
-- `fi`: Suomi
-- `fr`: Français
-- `ga`: Gaeilge
-- `gl`: Galego
-- `hr`: Hrvatski
-- `it`: Italiano
-- `ja`: 日本語
-- `nl`: Nederlands
-- `nn`: Nynorsk
-- `pl`: Polski
-- `pt`: Português
 - `ru`: Русский
-- `zh`: 中文
+- `tg`: тоҷикӣ (Tajik - Default)
 
 The capitals names are all translated in English but not in other languages.   
 
