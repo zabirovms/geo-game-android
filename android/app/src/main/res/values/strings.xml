@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Geo Game</string>
+    
+    <!-- Header -->
+    <string name="header_title">World Geography Game</string>
+    <string name="header_subtitle">Learn about or rediscover over 200 countries all over the globe!</string>
+    <string name="header_description">Find countries from their name, capital city or flag. Learn or review your geography in a simple way.</string>
+    
+    <!-- Modes -->
+    <string name="modes_country_name">Country Name</string>
+    <string name="modes_capital">Capital</string>
+    <string name="modes_flag">Flag</string>
+    
+    <!-- Continents -->
+    <string name="continents_africa">Africa</string>
+    <string name="continents_asia">Asia</string>
+    <string name="continents_europe">Europe</string>
+    <string name="continents_north_america">North America</string>
+    <string name="continents_south_america">South America</string>
+    <string name="continents_oceania">Oceania</string>
+    
+    <!-- Actions -->
+    <string name="actions_play">Play</string>
+    <string name="actions_restart">Restart</string>
+    <string name="actions_close">Close</string>
+    <string name="actions_next">Next</string>
+    <string name="actions_finish">Finish</string>
+    
+    <!-- Getting Started -->
+    <string name="getting_started_title">Getting Started</string>
+    <string name="getting_started_intro">Find the country by the name, capital city or flag given on the top of the page.</string>
+    
+    <!-- Game -->
+    <string name="game_score">Score</string>
+    <string name="game_time">Time</string>
+    <string name="game_question">Question</string>
+    <string name="game_correct">Correct!</string>
+    <string name="game_wrong">Wrong!</string>
+    <string name="game_time_up">Time\'s up!</string>
+    <string name="game_game_over">Game Over</string>
+    <string name="game_final_score">Final Score</string>
+    
+    <!-- Languages -->
+    <string name="languages_en">English</string>
+    <string name="languages_ru">русский</string>
+    <string name="languages_tg">тоҷикӣ</string>
+</resources>

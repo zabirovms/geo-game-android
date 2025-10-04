@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Гео Игра</string>
+    
+    <!-- Header -->
+    <string name="header_title">Мировая Географическая Игра</string>
+    <string name="header_subtitle">Изучите или вспомните более 200 стран по всему миру!</string>
+    <string name="header_description">Найдите страны по их названию, столице или флагу. Изучайте географию простым способом.</string>
+    
+    <!-- Modes -->
+    <string name="modes_country_name">Название Страны</string>
+    <string name="modes_capital">Столица</string>
+    <string name="modes_flag">Флаг</string>
+    
+    <!-- Continents -->
+    <string name="continents_africa">Африка</string>
+    <string name="continents_asia">Азия</string>
+    <string name="continents_europe">Европа</string>
+    <string name="continents_north_america">Северная Америка</string>
+    <string name="continents_south_america">Южная Америка</string>
+    <string name="continents_oceania">Океания</string>
+    
+    <!-- Actions -->
+    <string name="actions_play">Играть</string>
+    <string name="actions_restart">Перезапустить</string>
+    <string name="actions_close">Закрыть</string>
+    <string name="actions_next">Далее</string>
+    <string name="actions_finish">Завершить</string>
+    
+    <!-- Getting Started -->
+    <string name="getting_started_title">Начало работы</string>
+    <string name="getting_started_intro">Найдите страну по названию, столице или флагу, указанному в верхней части страницы.</string>
+    
+    <!-- Game -->
+    <string name="game_score">Счет</string>
+    <string name="game_time">Время</string>
+    <string name="game_question">Вопрос</string>
+    <string name="game_correct">Правильно!</string>
+    <string name="game_wrong">Неправильно!</string>
+    <string name="game_time_up">Время вышло!</string>
+    <string name="game_game_over">Игра окончена</string>
+    <string name="game_final_score">Финальный счет</string>
+    
+    <!-- Languages -->
+    <string name="languages_en">English</string>
+    <string name="languages_ru">русский</string>
+    <string name="languages_tg">тоҷикӣ</string>
+</resources>

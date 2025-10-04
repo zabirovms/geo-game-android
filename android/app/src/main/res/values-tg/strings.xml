@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Бозии Ҷуғрофия</string>
+    
+    <!-- Header -->
+    <string name="header_title">Бозии Ҷуғрофияи Ҷаҳон</string>
+    <string name="header_subtitle">Дар бораи зиёда аз 200 кишвар дар тамоми ҷаҳон омӯзед ё аз нав ёд кунед!</string>
+    <string name="header_description">Кишварҳоро аз номи онҳо, пойтахт ё парчам ёбед. Ҷуғрофияро ба тариқи содда омӯзед ё баррасӣ кунед.</string>
+    
+    <!-- Modes -->
+    <string name="modes_country_name">Номи Кишвар</string>
+    <string name="modes_capital">Пойтахт</string>
+    <string name="modes_flag">Парчам</string>
+    
+    <!-- Continents -->
+    <string name="continents_africa">Африқо</string>
+    <string name="continents_asia">Осиё</string>
+    <string name="continents_europe">Аврупо</string>
+    <string name="continents_north_america">Амрикои Шимолӣ</string>
+    <string name="continents_south_america">Амрикои Ҷанубӣ</string>
+    <string name="continents_oceania">Уқёнусия</string>
+    
+    <!-- Actions -->
+    <string name="actions_play">Бозӣ</string>
+    <string name="actions_restart">Аз нав оғоз</string>
+    <string name="actions_close">Пӯшидан</string>
+    <string name="actions_next">Навбатӣ</string>
+    <string name="actions_finish">Тамом</string>
+    
+    <!-- Getting Started -->
+    <string name="getting_started_title">Оғози кор</string>
+    <string name="getting_started_intro">Кишвареро ёбед, ки номи он, пойтахт ё парчамаш дар болои саҳифа дода шудааст.</string>
+    
+    <!-- Game -->
+    <string name="game_score">Ҳисоб</string>
+    <string name="game_time">Вақт</string>
+    <string name="game_question">Савол</string>
+    <string name="game_correct">Дурст!</string>
+    <string name="game_wrong">Нодуруст!</string>
+    <string name="game_time_up">Вақт тамом шуд!</string>
+    <string name="game_game_over">Бозӣ тамом шуд</string>
+    <string name="game_final_score">Ҳисоби ниҳоӣ</string>
+    
+    <!-- Languages -->
+    <string name="languages_en">English</string>
+    <string name="languages_ru">русский</string>
+    <string name="languages_tg">тоҷикӣ</string>
+</resources>
