@@ -2,7 +2,7 @@
   "name": "geo-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marc-ed-raffalli.github.io/geo-game/",
+  "homepage": ".",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "leaflet": "^1.3.1",
@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "serve": "npx serve -s build -l 3000"
+    "serve": "npx serve -s build -l 3000 --single"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
