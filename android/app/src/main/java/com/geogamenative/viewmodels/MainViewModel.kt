@@ -10,16 +10,16 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val countryRepository: CountryRepository
+  private val countryRepository: CountryRepository
 ) : ViewModel() {
-    
-    fun initializeApp() {
-        viewModelScope.launch {
-            countryRepository.initializeData()
-        }
+
+  fun initializeApp() {
+    viewModelScope.launch {
+      countryRepository.initializeData()
     }
-    
-    fun getCurrentLanguage(): String = LocaleHelper.getCurrentLanguage()
-    
-    fun getSupportedLanguages(): List<LocaleHelper.Language> = LocaleHelper.getSupportedLanguages()
+  }
+
+  fun getCurrentLanguage(): String = LocaleHelper.getCurrentLanguage()
+
+  fun getSupportedLanguages(): List<LocaleHelper.Language> = LocaleHelper.getSupportedLanguages()
 }
